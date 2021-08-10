@@ -6,7 +6,8 @@
 [Getting Started](#getting-started) - setting up and what is the prompt  
 [Navigation](#navigation) - navigating the filesystem with bash  
 [File Management](#file-management) - creating, editing, and deleting files and directories  
-[Finding Things](#finding-things) - how to find files and search file contents  
+[Finding Things](#finding-things) - how to find files and search file contents
+[Utilities](#utilities) - useful utility functions to know  
 
 # Introduction
 
