@@ -287,6 +287,8 @@ Usually preceeding a `curl` command is a `ping` of the api to check if is up.
 The `which` command can be used to find the location of an executable which is
 very handy when you don't know where you `python` is located.
 
+## Commands
+
 **List Command History**
 ```
 history
@@ -295,7 +297,7 @@ will show the most recent commands you have run
 
 **Check If An Endpoint Is Up**
 ```
-ping google
+ping google.com
 ```
 will send bites of data to google to see if it online
 
