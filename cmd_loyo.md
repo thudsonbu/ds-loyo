@@ -1,10 +1,5 @@
 # **Mastering the Terminal**
 
-### todo
-- add `copy` and `move` commands
-- add `grep` command
-- add `find` and `grep` combinations
-
 # Contents
 
 [Introduction](#introduction) - why use the terminal and why use bash  
@@ -128,6 +123,18 @@ rm newfile.txt
 ```
 deletes `newfile.txt`
 
+**Copy A File**
+```
+cp newfile.txt
+```
+cp `newfile.txt`
+
+**Move Or Rename A File**
+```
+mv newfile.txt
+```
+mv `newfile.txt`
+
 **Create A Directory**
 ```
 mkdir mydirectory
@@ -177,6 +184,8 @@ and checking that `myfile.txt` is not listed.
 
 # Finding Things
 
+## Find
+
 Given that the current windows finder tool works as if it was programmed by a child, 
 the `find` command can be especially useful. The find command takes a few 
 different *arguments* which are additional parameters for a command. For example,
@@ -199,34 +208,106 @@ ends in `.txt`. The `?` wild cards can represent any single character, thus
 `11/2?/2022` would match any day in the tweentys of november 2022. There are 
 several othe wildcards that arent as useful. 
 
-## Commands
+## Find Commands
 
 **Find A File**
 ```
-find . -name myfile.txt
+find . -name 'myfile.txt'
 ```
 Will search the current directory and all sub directories for `myfile.txt`
 
 **Find A File By Filetype**
 ```
-find ./project -name *.py
+find ./project -name '*.py'
 ```
 Will find any `.py` file in the `project` directory or any subdirectory of the 
 `project` directory.
 
 **Find A File By Name Without Filetype**
 ```
-find . -name utils.*
+find . -name 'utils.*'
 ```
 Will find any file named `utils` in teh current directory or any subdirectory.
 
 **Find A File Or Directory**
 ```
-find . -name somename
+find . -name 'somename'
 ```
 Will find any file or directory with `somename` in the current directory or any
 sub directory.
 
+## Grep
 
+While the `find` command allows you to search for files and directories by name, 
+the `grep` command allows you to search file contents. It becomes extremely 
+powerful when combined with other commands. The `grep` command takes a string or
+regular expression to search for and a place to search it. There are several 
+useful options for the grep command, `-i` specifies a case insensitive search, 
+`-R` works recursively, it will go into all files in the directory and all files
+in each subdirectory of the provided directory.
 
+## Grep Commands
 
+**Find A Word In A File**
+```
+grep 'word' myfile.txt
+```
+Will return each entire line that `word` is within in the `myfile.txt` file.
+
+**Find A Word Case Insensitive**
+```
+grep -i 'word' myfile.txt
+```
+Will return each entire line that `word` or `Word` or `wOrD`... is within in the 
+`myfile.txt` file.
+
+## Find and Grep
+
+As mentioned earlier, you can use `find` and `grep` in tandem by executing grep
+with the output of the find command. Since the `find` command outputs file names
+and the `grep` command takes in file names you can use the `-exec` command to 
+execute the files from a `find` in a `grep` statement.
+
+## Find and Grep Commands
+
+**Search Python files for Matplotlib**
+```
+find . -name '*.py' -exec grep 'Matplotlib' {} +
+```
+First we find all python files then we pass those files into grep indicated by
+`{}` searching for the pattern `Matplotlib`. All the names of python files 
+containing `Matplotlib` will be printed. 
+
+# Utilities
+
+There are some other simple commands that can be very useful in the terminal.
+The first of which is the `history` command which prints the most recent commands
+executed. The `curl` command can be used to make requests to quickly check an api.
+Usually preceeding a `curl` command is a `ping` of the api to check if is up.
+The `which` command can be used to find the location of an executable which is
+very handy when you don't know where you `python` is located.
+
+**List Command History**
+```
+history
+```
+will show the most recent commands you have run
+
+**Check If An Endpoint Is Up**
+```
+ping google
+```
+will send bites of data to google to see if it online
+
+**Make A API Request**
+```
+curl --request GET --url https://swapi.dev/api/starships/9/
+```
+will make a `GET` request to a starwars database `swapi.dev` and return the
+9th ships json data.
+
+**Find Executable**
+```
+which python
+```
+print the path to you `python.exe` file (if you have one)
