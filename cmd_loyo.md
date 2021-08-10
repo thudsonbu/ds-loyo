@@ -304,7 +304,7 @@ will send bites of data to google to see if it online
 curl --request GET --url https://swapi.dev/api/starships/9/
 ```
 will make a `GET` request to a starwars database `swapi.dev` and return the
-9th ships json data.
+9th ship's json data
 
 **Find Executable**
 ```
