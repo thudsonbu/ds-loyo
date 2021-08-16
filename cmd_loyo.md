@@ -24,17 +24,17 @@ not provide a gui interface so knowing how to use the terminal is vital.
 ## Why use Bash?
 
 While the default Windows command prompt and powershell reasonable tools, the 
-majority of powerful servers use linux and its bash shell. Learning linux based
+majority of powerful servers use Linux and its bash shell. Learning Linux based
 commands is therefore much more useful then learning powershell commands. A 
 bash-like shell is provided by `git` when installing on windows from the web 
-and most of the basic commands used on a linux or mac are supported. 
+and most of the basic commands used on a Linux or Mac are supported. 
 
 # Getting Started
 
 ## Install and Setup
 
-To open the terminal on mac press the `cmd` and `space` keys at the same time and in the
-quick search bar type `terminal` and hit enter. On windows, to launch the git 
+To open the terminal on Mac press the `cmd` and `space` keys at the same time and in the
+quick search bar type `terminal` and hit enter. On Windows, to launch the git 
 bash terminal press the `start` key and type in `bash`, press enter to launch
 the terminal.
 
@@ -75,7 +75,7 @@ cd ..
 
 ## Quick Example
 
-For a quick example, in you home directory, type 
+For a quick example, in your home directory, type 
 ```
 ls
 ``` 
@@ -157,7 +157,7 @@ touch myfile.txt
 to create a new file called `myfile.txt`.
 Now, we want some text in our `myfile.txt` so we can *pipe* in some text. This
 can be done by using the `echo` command and then *piping* its output into 
-`myfile.txt`. First let's try out the `echo` command. The `echo` command takes
+`myfile.txt`. First, let's try out the `echo` command. The `echo` command takes
 the computer *output* passed to it and prints it to the screen. Enter 
 ```
 echo hello
@@ -187,7 +187,7 @@ and checking that `myfile.txt` is not listed.
 
 ## Find
 
-Given that the current windows finder tool works as if it was programmed by a child, 
+Given that the current Windows finder tool works as if it was programmed by a child, 
 the `find` command can be especially useful. The find command takes a few 
 different *arguments* which are additional parameters for a command. For example,
 when we type `cd mydirectory` to go to `mydirectory`, `mydirectory` is an
@@ -200,14 +200,14 @@ find . -name myfile.txt
 ```
 will search for files called `myfile.txt` (the file type is important) in the
 current directory. The `.` specifies that we want to seach everything in the
-current directory. It is important to noe that if our file was nested within 
+current directory. It is important to know that if our file was nested within 
 another directory, it would also be found.
 
-What makes find powerful is the use of wildcards. The `*` wild card matches any
+What makes find powerful is the use of wildcards. The `*` wildcard matches any
 number of any character. For example `*.txt` will match on any file name that
 ends in `.txt`. The `?` wild cards can represent any single character, thus 
 `11/2?/2022` would match any day in the tweentys of november 2022. There are 
-several othe wildcards that arent as useful. 
+several othe wildcards with specific uses. 
 
 ## Find Commands
 
@@ -215,7 +215,7 @@ several othe wildcards that arent as useful.
 ```
 find . -name 'myfile.txt'
 ```
-Will search the current directory and all sub directories for `myfile.txt`
+Will search the current directory and all sub-directories for `myfile.txt`
 
 **Find A File By Filetype**
 ```
@@ -228,14 +228,14 @@ Will find any `.py` file in the `project` directory or any subdirectory of the
 ```
 find . -name 'utils.*'
 ```
-Will find any file named `utils` in teh current directory or any subdirectory.
+Will find any file named `utils` in the current directory or any sub-directory.
 
 **Find A File Or Directory**
 ```
 find . -name 'somename'
 ```
 Will find any file or directory with `somename` in the current directory or any
-sub directory.
+sub-directory.
 
 ## Grep
 
@@ -245,7 +245,7 @@ powerful when combined with other commands. The `grep` command takes a string or
 regular expression to search for and a place to search it. There are several 
 useful options for the grep command, `-i` specifies a case insensitive search, 
 `-R` works recursively, it will go into all files in the directory and all files
-in each subdirectory of the provided directory.
+in each sub-directory of the provided directory.
 
 ## Grep Commands
 
@@ -286,7 +286,7 @@ The first of which is the `history` command which prints the most recent command
 executed. The `curl` command can be used to make requests to quickly check an api.
 Usually preceeding a `curl` command is a `ping` of the api to check if is up.
 The `which` command can be used to find the location of an executable which is
-very handy when you don't know where you `python` is located.
+very handy when you don't know where your `python` is located.
 
 ## Commands
 
@@ -300,17 +300,17 @@ will show the most recent commands you have run
 ```
 ping google.com
 ```
-will send bites of data to google to see if it online
+will send bites of data to google to see if it's online
 
 **Make A API Request**
 ```
 curl --request GET --url https://swapi.dev/api/starships/9/
 ```
-will make a `GET` request to a starwars database `swapi.dev` and return the
+will make a `GET` request to a Star Wars database `swapi.dev` and return the
 9th ship's json data
 
 **Find Executable**
 ```
 which python
 ```
-print the path to you `python.exe` file (if you have one)
+print the path to your `python.exe` file (if you have one)
